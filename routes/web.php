@@ -12,4 +12,17 @@
 */
 
 $router->get('/', function () use ($router) { return "Amigo do Caminhoneiro!"; });
-$router->post('/register','UsersController@register');
+$router->post('/register'	,'UsersController@register');
+$router->post('/user/{id}'	,'UsersController@login');
+
+$router->group(['prefix' => 'api'], function () use ($router) 
+{
+	$class='Cambio';	
+	$path='/cambio';
+
+	$router->get		($path,  		['uses' => $class.'Controller@showAll']);
+	$router->get		($path.'/{id}', 	['uses' => $class.'Controller@showOne']);
+	$router->post		($path, 		['uses' => $class.'Controller@create']);
+	$router->delete		($path.'/{id}', 	['uses' => $class.'Controller@delete']);
+	$router->put		($path.'/{id}', 	['uses' => $class.'Controller@update']);
+});
