@@ -22,6 +22,11 @@ class CambioController extends Controller
         return response()->json(Cambio::where('destination', $id)->first());
     }
 
+    public function showAllInbox($id)
+    {
+        return response()->json(Cambio::where('destination', $id)->get());
+    }
+
     public function create(Request $request)
     {
         $form = Cambio::create($request->all());

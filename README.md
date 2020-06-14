@@ -41,6 +41,7 @@ POST:	/user/{id} 	: login de acesso
 GET:	/api/cambio		: get all Messages  
 GET: 	/api/cambio/{id}	: get Message ID  
 GET: 	/api/cambio/inbox{id}	: get Inbox Message for the User ID  
+GET: 	/api/cambio/allinbox{id}: get All Inbox Message for the User ID  
 POST:	/api/cambio		: post new Message ID  
 DELETE:	/api/cambio/{id}	: delete Message ID  
 PUT:	/api/cambio/{id}	: update Message ID  

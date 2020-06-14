@@ -23,6 +23,7 @@ $router->group(['prefix' => 'api'], function () use ($router)
 	$router->get		($path,  		['uses' => $class.'Controller@showAll']);
 	$router->get		($path.'/{id}', 	['uses' => $class.'Controller@showOne']);
 	$router->get		($path.'/inbox/{id}', 	['uses' => $class.'Controller@showInbox']);
+	$router->get		($path.'/allinbox/{id}',['uses' => $class.'Controller@showAllInbox']);
 	$router->post		($path, 		['uses' => $class.'Controller@create']);
 	$router->delete		($path.'/{id}', 	['uses' => $class.'Controller@delete']);
 	$router->put		($path.'/{id}', 	['uses' => $class.'Controller@update']);
