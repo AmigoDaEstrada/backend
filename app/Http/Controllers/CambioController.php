@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class CambioController extends Controller
 {
-
     public function showAll()
     {
         return response()->json(Cambio::all());
@@ -20,7 +19,7 @@ class CambioController extends Controller
 
     public function showInbox($id)
     {
-        return response()->json(Cambio::where('destination', $id)->firstOrFail());
+        return response()->json(Cambio::where('destination', $id)->first());
     }
 
     public function create(Request $request)
